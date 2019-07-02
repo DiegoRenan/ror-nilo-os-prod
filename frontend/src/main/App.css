@@ -1,9 +1,10 @@
 :root {
-  --bg-dark: #1A2F3A;
+  --bg-color: #FAFAFA;
+  --custom-blue: #1D8ECE;
+  --custom-light-blue: #1F84FF;
 
-  --logo-height: 100px;
-  --header-height: 100px;
-  --aside-width: 225px;
+  --header-height: 40px;
+  --aside-width: 250px;
   --footer-height: 40px;
 
   --shadow:
@@ -12,8 +13,8 @@
 }
 
 @font-face {
-  font-family: 'RobotoMonoLight';
-  src: url('../assets/fonts/RobotoMono-Light.ttf'); 
+  font-family: 'RobotoMono';
+  src: url('../assets/fonts/RobotoMono-Regular.ttf'); 
 }
 
 * {
@@ -21,8 +22,24 @@
   font-family: 'RobotoMonoLight', monospace;
 }
 
-.app {
+html, body {
   margin: 0px;
+  padding: 0px;
+  height: 100%;
+  font-size: 0.95em;
+  flex: 1;
+}
+
+a, a:link, a:visited {
+  color: #666666;
+}
+
+
+/* layout e grid */
+
+.app{
+  margin: 0px;
+  padding: 0px;
   display: grid;
   grid-template-columns: var(--aside-width) 1fr;
   grid-template-rows:
@@ -30,16 +47,13 @@
     1fr
     var(--footer-height);
   grid-template-areas:
-    "logo header"
+    "header header"
     "menu content"
     "menu footer";
   height: 100vh;
-  background-color: #FAFAFA;
+  background-color: var(--bg-color);
 }
 
-aside.logo {
-  grid-area: logo;
-}
 
 header.header {
   grid-area: header;
