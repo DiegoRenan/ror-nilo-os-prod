@@ -7,3 +7,7 @@ nav.navbar {
 .navbar-brand {
   height: var(--header-height);
 }
+
+.nav-items {
+  margin-top: -15px;
+}
