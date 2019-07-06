@@ -5,7 +5,7 @@ import 'font-awesome/css/font-awesome.min.css'
 import './App.css'
 
 import React from 'react'
-import { HashRouter } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 
 import Nav from '../components/templates/Nav'
@@ -13,10 +13,12 @@ import Routes from '../routes/routes'
 import Footer from '../components/templates/Footer'
 
 export default props =>
-  <HashRouter>
+  <Router>
     <div className="app">
-      <Nav />
+      <div className="d-md-none d-none d-md-block">
+        <Nav />
+      </div>
       <Routes />
       <Footer />
     </div>
-  </HashRouter>
+  </Router>

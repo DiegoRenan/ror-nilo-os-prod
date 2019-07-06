@@ -4,47 +4,27 @@ import React from 'react'
 import NavItem from './NavItem'
 import DropMenu from './DropMenu'
 
-export default props => 
+export default props =>
   <aside className="menu-area">
     <nav className="menu">
       <NavItem icon="inbox" title="Caixa de entrada" address="#/" />
       <NavItem icon="tasks" title="Meus Tickets" address="#/mytickets" />
       <NavItem icon="lock" title="Tickets Fechados" address="#/closedtickets" />
-      
+
       <DropMenu title="Filters" icon="chevron-down">
-          <li className="nav-item">
-            <NavItem icon="filter" title="Delegadas a mim" address="#/" />
-          </li>
-          <li className="nav-item">
-            <NavItem icon="filter" title="Prioridade 1" address="#/" />
-          </li>
-          <li className="nav-item">
-            <NavItem icon="filter" title="Prioridade 2" address="#/" />
-          </li>
+        <NavItem icon="filter" title="Delegadas a mim" address="#/" />
+        <NavItem icon="filter" title="Prioridade 1" address="#/" />
+        <NavItem icon="filter" title="Prioridade 2" address="#/" />
       </DropMenu>
 
       <DropMenu title="Administrativo" icon="chevron-down">
-          <li className="nav-item">
-            <NavItem icon="" title="Usuários" address="#/" />
-          </li>
-          <li className="nav-item">
-            <NavItem icon="" title="Departamentos" address="#/" />
-          </li>
-          <li className="nav-item">
-            <NavItem icon="" title="Setores" address="#/" />
-          </li>
-          <li className="nav-item">
-            <NavItem icon="" title="Serviços" address="#/" />
-          </li>
-          <li className="nav-item">
-            <NavItem icon="" title="Status" address="#/" />
-          </li>
-          <li className="nav-item">
-            <NavItem icon="" title="Permissões" address="#/" />
-          </li>
-          <li className="nav-item">
-            <NavItem icon="" title="Funções" address="#/" />
-          </li>
+        <NavItem icon="" title="Usuários" address="#/" />
+        <NavItem icon="" title="Departamentos" address="#/" />
+        <NavItem icon="" title="Setores" address="#/" />
+        <NavItem icon="" title="Serviços" address="#/" />
+        <NavItem icon="" title="Status" address="#/" />
+        <NavItem icon="" title="Permissões" address="#/" />
+        <NavItem icon="" title="Funções" address="#/" />
       </DropMenu>
 
     </nav>

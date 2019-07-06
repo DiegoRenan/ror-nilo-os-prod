@@ -28,6 +28,7 @@ html, body {
   height: 100%;
   font-size: 0.95em;
   flex: 1;
+  color: #666666;
 }
 
 a, a:link, a:visited {
@@ -57,6 +58,7 @@ a, a:link, a:visited {
 
 header.header {
   grid-area: header;
+  width: 100%;
 }
 
 aside.menu-area {
@@ -69,4 +71,21 @@ main.content {
 
 footer.footer {
   grid-area: footer;
+}
+
+/* BREAKING POINTS */
+@media (max-width: 768px) { 
+  .app{
+    grid-template-columns: 1fr;
+    grid-template-rows:
+      var(--header-height)
+      1fr
+      var(--footer-height);
+    grid-template-areas:
+      "header"
+      "content"
+      "footer";
+    height: 100vh;
+    background-color: var(--bg-color);
+  }
 }

@@ -10,7 +10,7 @@ export default props =>
   <header className="header" id="header">
     <nav className="navbar navbar-dark bg-primary mx-auto">
       <a className="navbar-brand" href="#/">Nilo</a>
-      <div className="nav-items form-inline md-form form-sm mx-auto">
+      <div className="nav-items form-inline md-form form-sm mx-auto d-none d-md-inline-flex">
         <Search />
         <Add />
         <Alert />
