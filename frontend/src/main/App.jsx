@@ -7,7 +7,6 @@ import './App.css'
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-
 import Nav from '../components/templates/Nav'
 import Routes from '../routes/routes'
 import Footer from '../components/templates/Footer'

@@ -1,0 +1,2 @@
+export const TICKET_SEARCHED = "TICKET_SEARCHED"
+export const LOAD_TICKETS = "LOAD_TICKETS"
