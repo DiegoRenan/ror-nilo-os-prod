@@ -9,4 +9,6 @@
 #
 
 class Company < ApplicationRecord
+  #Associations
+  has_many :tickets
 end

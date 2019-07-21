@@ -21,7 +21,8 @@ namespace :dev do
       Ticket.create!(
         title: Faker::Lorem.sentence(3),
         body: Faker::Lorem.paragraph(2, false, 4),
-        conclude_at: Faker::Date.between(20.days.ago, 30.days.from_now)
+        conclude_at: Faker::Date.between(20.days.ago, 30.days.from_now),
+        company_id: Company.all.sample.id
       )
     end
 
