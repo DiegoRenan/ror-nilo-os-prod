@@ -17,5 +17,7 @@
 
 class Ticket < ApplicationRecord
   #Associations
-  belongs_to :company
+  belongs_to :company do 
+    link(:related) { ticket_company_url(object.kind.id)}
+  end
 end

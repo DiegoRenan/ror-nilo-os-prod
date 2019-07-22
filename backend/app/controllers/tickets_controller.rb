@@ -41,12 +41,16 @@ class TicketsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ticket
+      if params[:company_id]
+        @tickets = Company.find(params[:company_id]).tickets
+        return @tickets
+      end
       @ticket = Ticket.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def ticket_params
       ActiveModelSerializers::Deserialization
-        .jsonapi_parse(params, only: [:title, :body, :conclude_at, :company])
+        .jsonapi_parse(params, only: [:title, :body, :conclude_at])
     end
 end

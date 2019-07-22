@@ -42,11 +42,11 @@ class CompaniesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_company
       if params[:ticket_id]
-        @company = Ticket.find(params[:ticket_id]).company_id
+        @company = Ticket.find(params[:ticket_id]).company
         return @company
       end
         
-      @company = Company.find(company_id)
+      @company = Company.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
