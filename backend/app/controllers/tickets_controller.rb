@@ -46,6 +46,7 @@ class TicketsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def ticket_params
-      params.require(:ticket).permit(:title, :body, :conclude_at)
+      ActiveModelSerializers::Deserialization
+        .jsonapi_parse(params, only: [:title, :body, :conclude_at, :company])
     end
 end

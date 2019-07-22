@@ -4,7 +4,7 @@ class TicketSerializer < ActiveModel::Serializer
   #Associations
   belongs_to :company do
     #HATEOAS 
-    link(:related) { company_url(object.company.id) }
+    link(:related) { ticket_company_url(object.id) }
   end
 
   def attributes(*args)
