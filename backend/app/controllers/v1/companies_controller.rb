@@ -21,7 +21,7 @@ module V1
       if @company.save
         render json: @company, status: :created, location: @companies
       else
-        render json: @company.errors, status: :unprocessable_entity
+        render json: ErrorSerializer.serialize(@company.errors), status: :unprocessable_entity
       end
     end
   
@@ -30,14 +30,14 @@ module V1
       if @company.update(company_params)
         render json: @company
       else
-        render json: @company.errors, status: :unprocessable_entity
+        render json: ErrorSerializer.serialize(@company.errors), status: :unprocessable_entity
       end
     end
   
     # DELETE /companies/1
     def destroy
       if @company.tickets.exists? 
-        render json: @company.errors, status: :conflict
+        render json: ErrorSerializer.serialize(@company.errors), status: :conflict
       end
   
       @company.destroy

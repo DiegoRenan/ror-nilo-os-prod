@@ -17,7 +17,12 @@
 
 class Ticket < ApplicationRecord
   #Associations
-  belongs_to :company do 
+  belongs_to :company do
+    #HATEOAS 
     link(:related) { v1_ticket_company_url(object.id)}
   end
+
+  #Validations
+  validates :title, presence: true, length: { minimum: 6, maximum: 500 }
+  validates :body, presence: true, length: { minimum: 6, maximum: 20000 }
 end

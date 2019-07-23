@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+  include ErrorSerializer
   before_action :ensure_json_request
 
   # Return only if client accepts Mime Type vnd.api+json results

@@ -22,7 +22,7 @@ module V1
       if @ticket.save
         render json: @ticket, status: :created, location: @tickets
       else
-        render json: @ticket.errors, status: :unprocessable_entity
+        render json: ErrorSerializer.serialize(@company.errors), status: :unprocessable_entity
       end
     end
   
@@ -31,7 +31,7 @@ module V1
       if @tickets.update(ticket_params)
         render json: @tickets
       else
-        render json: @tickets.errors, status: :unprocessable_entity
+        render json: ErrorSerializer.serialize(@company.errors), status: :unprocessable_entity
       end
     end
   
