@@ -35,6 +35,10 @@ class CompaniesController < ApplicationController
 
   # DELETE /companies/1
   def destroy
+    if @company.tickets.exists? 
+      render json: @company.errors, status: :conflict
+    end
+
     @company.destroy
   end
 

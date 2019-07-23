@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   #http://guides.rubyonrails.org/routing.html
   resources :companies do
     resource :tickets, only: [:show]
-    resource :tickets, only: [:show], path: 'relationships/tickets'
+    resource :tickets, only: [:show], path: 'relationships/tickets' 
   end
+
   resources :tickets do
     resource :company, only: [:show]
     resource :company, only: [:show], path: 'relationships/company'

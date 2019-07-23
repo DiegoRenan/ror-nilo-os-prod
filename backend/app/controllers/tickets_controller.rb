@@ -10,7 +10,7 @@ class TicketsController < ApplicationController
 
   # GET /tickets/1
   def show
-    render json: @ticket
+    render json: @tickets
   end
 
   # POST /tickets
@@ -45,12 +45,12 @@ class TicketsController < ApplicationController
         @tickets = Company.find(params[:company_id]).tickets
         return @tickets
       end
-      @ticket = Ticket.find(params[:id])
+      @tickets = Ticket.where(id: params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def ticket_params
       ActiveModelSerializers::Deserialization
-        .jsonapi_parse(params, only: [:title, :body, :conclude_at])
+        .jsonapi_parse(params, only: [:title, :body, :conclude_at, :company_id])
     end
 end
