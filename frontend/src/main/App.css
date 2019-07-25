@@ -2,6 +2,7 @@
   --bg-color: #FAFAFA;
   --custom-blue: #1D8ECE;
   --custom-light-blue: #1F84FF;
+  --font-color: #666666;
 
   --header-height: 44px;
   --aside-width: 250px;
@@ -28,11 +29,11 @@ html, body {
   height: 100%;
   font-size: 0.95em;
   flex: 1;
-  color: #666666;
+  color: var(--font-color);
 }
 
 a, a:link, a:visited {
-  color: #666666;
+  color: var(--font-color);
 }
 
 
