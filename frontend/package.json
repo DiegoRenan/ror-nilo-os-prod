@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "main": "server-express.js",
+  "main": "app.js",
   "engines": {
     "node": "^11.13.0",
     "yarn": "1.12.3"
