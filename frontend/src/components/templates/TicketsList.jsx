@@ -1,15 +1,18 @@
 import './TicketsList.css'
-import React, { Component } from 'react'
-
+import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+
 import { loadTickets } from '../../actions/tickets'
 
 import Icon from './Icon'
 
 class TicketsList extends Component {
+  constructor(props) {
+    super(props)
+  }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.loadTickets()
   }
 
@@ -18,7 +21,7 @@ class TicketsList extends Component {
     return tickets.map(ticket => (
       <tr key={ticket.id}>
         <td><Icon icon='circle-o' /></td>
-        <td>{ticket.title}</td>
+        <td>{ticket.attributes.title}</td>
         <td> Fulano </td>
         <td><Icon icon='users' /></td>
         <td><Icon icon='hourglass-half' /></td>
@@ -28,7 +31,7 @@ class TicketsList extends Component {
     ))
   }
 
-  render() {
+  render () {
     return (
       <table className='table'>
         <thead>
@@ -43,13 +46,13 @@ class TicketsList extends Component {
           </tr>
         </thead>
         <tbody>
-          { this.renderRows() }
+          {this.renderRows()}
         </tbody>
       </table>
     )
   }
 }
 
-const mapStateToProps = store => ({ tickets: store.ticketsState.tickets })
-const mapDispatchToProps = dispatch => bindActionCreators({ loadTickets }, dispatch)
+const mapStateToProps = state => ({ tickets: state.ticketsState.tickets.data })
+const mapDispatchToProps = dispatch => bindActionCreators({loadTickets}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(TicketsList)

@@ -28,8 +28,8 @@ module V1
   
     # PATCH/PUT /tickets/1
     def update
-      if @tickets.update(ticket_params)
-        render json: @tickets
+      if @ticket.update(ticket_params)
+        render json: @ticket
       else
         render json: ErrorSerializer.serialize(@company.errors), status: :unprocessable_entity
       end
