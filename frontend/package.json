@@ -2,6 +2,11 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "main": "server-express.js",
+  "engines": {
+    "node": "^11.13.0",
+    "yarn": "1.12.3"
+  },
   "dependencies": {
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
@@ -21,7 +26,8 @@
     "start": "PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "production": "NODE=production webpack --progress -p PORT=3001"
   },
   "eslintConfig": {
     "extends": "react-app"
