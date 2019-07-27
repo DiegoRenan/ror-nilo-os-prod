@@ -3,9 +3,9 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { loadCompanies } from '../../actions/companies'
+import { loadCompanies } from '../../../actions/companies'
 
-import Icon from './Icon'
+import Icon from '../../templates/Icon'
 
 class CompanyList extends Component {
   constructor(props) {
