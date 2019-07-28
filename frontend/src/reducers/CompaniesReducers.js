@@ -10,7 +10,7 @@ export default (state = INITIAL_STATE, action) => {
     case COMPANY_CHANGED:
       return {...state, company: action.payload} 
     case COMPANY_ADDED:
-      return {...state}
+      return {...state, company: ''}
     default:
       return state
   }

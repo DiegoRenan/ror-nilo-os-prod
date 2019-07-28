@@ -1,6 +1,7 @@
 import { LOAD_COMPANIES, COMPANY_CHANGED, COMPANY_ADDED }  from './actionTypes'
 
 import api from '../services/api'
+import { dispatch } from 'rxjs/internal/observable/pairs';
 
 const company = data => {
   return (
@@ -34,10 +35,12 @@ export const changeCompany = event => {
 }
 
 // create a Company
-export const add = (company_name) => {
-  console.log("Company: " + company_name)
-  return [
-    { type: COMPANY_ADDED, payload: api.addCompany( company(company_name) ) },
+export const add = (company_name) => async(dispatch) => {
+  let response = await api.addCompany( company(company_name) )
+  dispatch({
+    type: COMPANY_ADDED, payload: response 
+  })
+  dispatch(
     loadCompanies()
-  ]
+  )
 }
