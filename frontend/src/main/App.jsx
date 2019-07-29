@@ -9,7 +9,9 @@ import { BrowserRouter as Router } from 'react-router-dom'
 
 import Nav from '../components/templates/Nav'
 import Routes from '../routes/routes'
+import Alert from '../components/templates/Alert'
 import Footer from '../components/templates/Footer'
+
 
 export default props =>
   <Router>
@@ -17,6 +19,7 @@ export default props =>
       <div className="d-md-none d-none d-md-block">
         <Nav />
       </div>
+      <Alert />
       <Routes />
       <Footer />
     </div>

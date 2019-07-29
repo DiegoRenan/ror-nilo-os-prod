@@ -2,7 +2,7 @@ import './Header.css'
 import React from 'react'
 
 import Search from './Search'
-import Alert from './Alert'
+import Alert from './Notification'
 import Add from './Add'
 import Tool from './Tool'
 

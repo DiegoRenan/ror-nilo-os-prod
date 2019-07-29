@@ -4,7 +4,6 @@ import React, { Component } from 'react'
 import Main from '../../templates/Main'
 import TicketsList from '../../templates/TicketsList'
 
-
 export default class Home extends Component {
 
   render() {
