@@ -26,8 +26,7 @@
     "start": "PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "production": "NODE=production webpack --progress -p PORT=3001"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
