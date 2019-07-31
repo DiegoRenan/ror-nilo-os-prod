@@ -8,5 +8,6 @@ const url = axios.create({
 export default {
   loadTickets: () => url.get("/v1/tickets"),
   loadCompanies:  () => url.get("/v1/companies"),
-  addCompany: (data) => url.post("/v1/companies", data )
+  addCompany: (data) => url.post("/v1/companies", data ),
+  deleteCompany: (id) => url.delete(`/v1/companies/${id}`)
 }

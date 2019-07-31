@@ -3,9 +3,10 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { loadCompanies } from '../../../actions/companies'
+import { loadCompanies, remove } from '../../../actions/companies'
 
 import Icon from '../../templates/Icon'
+import Button from '../../templates/Button'
 
 class CompanyList extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class CompanyList extends Component {
         <td>{company.attributes.name}</td>
         <td> Fulano </td>
         <td><Icon icon='edit' /></td>
-        <td><Icon icon='trash' /></td>
+        <td><Button icon="trash" style="default" onClick={() =>  this.props.remove(company.id)} /></td>
       </tr>
     ))
   }
@@ -48,5 +49,5 @@ class CompanyList extends Component {
 }
 
 const mapStateToProps = state => ({ companies: state.companiesState.companies.data })
-const mapDispatchToProps = dispatch => bindActionCreators({loadCompanies}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({loadCompanies, remove}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(CompanyList)
