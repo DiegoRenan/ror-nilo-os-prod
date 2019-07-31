@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const url = axios.create({
-  baseURL: 'http://177.23.191.191:3000',
+  baseURL: "http://177.23.191.191:3000/",
   headers: { 'Accept': 'application/vnd.api+json' }
 })
 
