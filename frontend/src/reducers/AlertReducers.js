@@ -1,4 +1,4 @@
-import { CRUD_EXECUTED } from '../actions/actionTypes'
+import { CRUD_EXECUTED, LOAD_COMPANIES } from '../actions/actionTypes'
 
 const INITIAL_STATE = { http_code: '', message: '' }
 
@@ -8,7 +8,8 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state, 
         http_code: action.payload.http_code, 
-        message: action.payload.message
+        message: action.payload.message,
+        hidden: action.payload.hidden
       }
     default:
       return state

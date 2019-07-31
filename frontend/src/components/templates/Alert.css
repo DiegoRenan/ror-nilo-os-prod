@@ -3,12 +3,16 @@ section.alert .hidden {
 }
 
 section.alert .alert-box {
-  padding: 7px;
+  position: fixed;
+  top: 10px;
+  width: 500px;
+  padding: 5px;
   margin: 5px;
+  z-index: 100;
   color: white;
-  border: 1px solid;
 }
 
-.alert-201 {
+.alert-success {
   background-color: #63BB6F;
 }
+
