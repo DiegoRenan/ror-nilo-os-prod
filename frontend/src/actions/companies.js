@@ -1,5 +1,6 @@
 import { LOAD_COMPANIES, COMPANY_CHANGED, COMPANY_ADDED , COMPANY_UPDATED, GET_COMPANY}  from './actionTypes'
 
+import { Router } from 'react-router-dom'
 import alert from './alert'
 import api from '../services/api'
 
@@ -50,7 +51,7 @@ export const add = (company) => async(dispatch) => {
 }
 
 // update a Company
-export const update = (company) => async(dispatch) => {
+export const update = (company, ownProps) => async(dispatch) => {
   let response = await api.updateCompany( company )
   dispatch({
     type: COMPANY_UPDATED, payload: response 
@@ -63,8 +64,9 @@ export const update = (company) => async(dispatch) => {
   dispatch(
     alert({ http_code: status, message: statusText, hidden: '' })
   )
-
   hiddenAlert(dispatch)
+  
+  ownProps.history.push(`/companyShow/${response.data.data.id}`)
 }
 
 // get a Company

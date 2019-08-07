@@ -5,12 +5,10 @@ import { bindActionCreators } from 'redux'
 
 
 import Main from '../../templates/Main'
-import Input from '../../templates/Input'
 import Grid from '../../templates/Grid'
-import Button from '../../templates/Button'
 import { getCompany } from '../../../actions/companies'
 
-class CompanyUpdate extends Component {
+class CompanyShow extends Component {
 
   componentWillMount() {
     this.props.getCompany(this.props.match.params.id)
@@ -18,8 +16,8 @@ class CompanyUpdate extends Component {
   
   render() {
     return (
-      <Main title="Empresas" >
-        <div className="display-4">Empresas</div>
+      <Main title="Empresa" >
+        <div className="display-4">Empresa</div>
         <div className="company">
           <div className='row'>
             <Grid cols="2 2 2 2">
@@ -37,4 +35,4 @@ class CompanyUpdate extends Component {
 
 const mapStateToProps = state => ({ id: state.companiesState.id, name: state.companiesState.company })
 const mapDispatchToProps = dispatch => bindActionCreators({ getCompany }, dispatch)
-export default connect(mapStateToProps, mapDispatchToProps)(CompanyUpdate)
+export default connect(mapStateToProps, mapDispatchToProps)(CompanyShow)

@@ -6,7 +6,7 @@ export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case LOAD_COMPANIES:
       let data = action.payload.data || []
-      return { ...state, companies: data }
+      return { ...state, companies: data, company: '' }
     case COMPANY_CHANGED:
       return { ...state, company: action.payload }
     case COMPANY_ADDED:

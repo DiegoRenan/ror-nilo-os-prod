@@ -27,7 +27,7 @@ class CompanyUpdate extends Component {
               <Input type="text" value={this.props.name} onChange={this.props.changeCompany} />
             </Grid>
             <Grid cols="2 2 2 2">
-              <Button icon="plus" style="primary" onClick={() => this.props.update(companyObj)} />
+              <Button icon="plus" style="primary" onClick={() => this.props.update(companyObj, this.props)} />
             </Grid>
           </div>
         </div>
