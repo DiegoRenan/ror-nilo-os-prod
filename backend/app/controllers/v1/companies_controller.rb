@@ -38,9 +38,9 @@ module V1
     def destroy
       if @company.tickets.exists? 
         render json: ErrorSerializer.serialize(@company.errors), status: :conflict
+      else
+        @company.destroy
       end
-  
-      @company.destroy
     end
   
     private
@@ -50,8 +50,13 @@ module V1
           @company = Ticket.find(params[:ticket_id]).company
           return @company
         end
-          
-        @company = Company.find(params[:id])
+        
+        if Company.exists?(params[:id])
+          @company = Company.find(params[:id])
+        else
+          error = {:id=>["Não encontrado Empresa com o id: #{params[:id]}"]}
+          render json: ErrorSerializer.serialize(error), status: :unprocessable_entity
+        end
       end
   
       # Only allow a trusted parameter "white list" through.

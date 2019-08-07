@@ -1,5 +1,6 @@
 import './CompanyList.css'
 import React, {Component} from 'react'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
@@ -23,8 +24,8 @@ class CompanyList extends Component {
       <tr key={company.id}>
         <td>{company.attributes.name}</td>
         <td> Fulano </td>
-        <td><Icon icon='edit' /></td>
-        <td><Button icon="trash" style="default" onClick={() =>  this.props.remove(company.id)} /></td>
+        <td> <Link to={`companyUpdate/`+company.id}> <Icon icon='edit' /> </Link> </td>
+        <td> <Link to="#" onClick={() =>  this.props.remove(company.id)} ><Icon icon='trash' /> </Link> </td>
       </tr>
     ))
   }

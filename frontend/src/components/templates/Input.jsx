@@ -3,7 +3,7 @@ import React from 'react'
 
 export default props =>
   <input type={props.type} 
-         className={'input ' + props.style}
+         className={'form-control ' + props.style}
          placeholder={props.placeholder}
          value={props.value} 
          onChange={props.onChange}/>

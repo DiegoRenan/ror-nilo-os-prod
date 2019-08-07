@@ -1,4 +1,4 @@
-import { LOAD_COMPANIES, COMPANY_CHANGED, COMPANY_ADDED }  from './actionTypes'
+import { LOAD_COMPANIES, COMPANY_CHANGED, COMPANY_ADDED , GET_COMPANY}  from './actionTypes'
 
 import alert from './alert'
 import api from '../services/api'
@@ -62,6 +62,16 @@ export const add = (company_name) => async(dispatch) => {
   )
 
   hiddenAlert(dispatch)
+}
+
+// get a Company
+export const getCompany = (company_id) => {
+  
+  return{ 
+    type: GET_COMPANY,
+    payload: api.getCompany(company_id)
+  }
+  
 }
 
 // delete a Company
