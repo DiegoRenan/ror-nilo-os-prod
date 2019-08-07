@@ -7,7 +7,6 @@ import { bindActionCreators } from 'redux'
 import { loadCompanies, remove } from '../../../actions/companies'
 
 import Icon from '../../templates/Icon'
-import Button from '../../templates/Button'
 
 class CompanyList extends Component {
   constructor(props) {

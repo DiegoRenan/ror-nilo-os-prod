@@ -13,7 +13,6 @@ class Alert extends Component {
     setTimeout(() => {
       this.setState({...this.state, hidden: this.props.hidden})
     }, 1000);
-    console.log("didUpdade")
   }
 
   render() {
