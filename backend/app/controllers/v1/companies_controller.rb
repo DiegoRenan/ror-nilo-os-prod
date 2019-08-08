@@ -2,19 +2,19 @@ module V1
   class CompaniesController < ApplicationController
     before_action :set_company, only: [:show, :update, :destroy]
   
-    # GET /companies
+    # GET v1/companies
     def index
       @companies = Company.all
   
       render json: @companies
     end
   
-    # GET /companies/1
+    # GET v1/companies/1
     def show
       render json: @company
     end
   
-    # POST /companies
+    # POST v1/companies
     def create
       @company = Company.new(company_params)
   
@@ -25,7 +25,7 @@ module V1
       end
     end
   
-    # PATCH/PUT /companies/1
+    # PATCH/PUT v1/companies/1
     def update
       if @company.update(company_params)
         render json: @company
@@ -34,7 +34,7 @@ module V1
       end
     end
   
-    # DELETE /companies/1
+    # DELETE v1/companies/1
     def destroy
       if @company.tickets.exists? 
         render json: ErrorSerializer.serialize(@company.errors), status: :conflict

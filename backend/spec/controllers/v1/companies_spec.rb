@@ -59,6 +59,27 @@ describe V1::CompaniesController, type: :controller do
 
   end
 
+  context 'PUT v1/companies/:id' do
+    
+    it 'should update a company name' do
+      company = Company.first
+      params = {
+        "id": company.id,
+        "type": "companies",
+        "attributes": {
+          "name": "Company update"
+        }
+      }
+      request.accept = 'application/vnd.api+json'
+      put :update, params: { id: company.id, data: params }
+      expect(response).to have_http_status(:ok)
+      response_body = JSON.parse(response.body)
+      params = JSON.parse(params.to_json)
+      expect(response_body.json("data > attributes > name")).to eq(params.json("attributes > name").upcase)
+    end
+
+  end
+
   context 'DELETE v1/company/:id' do
     
     it 'should delete a company without tickets' do 

@@ -1,6 +1,5 @@
 import { LOAD_COMPANIES, COMPANY_CHANGED, COMPANY_ADDED , COMPANY_UPDATED, GET_COMPANY}  from './actionTypes'
 
-import { Router } from 'react-router-dom'
 import alert from './alert'
 import api from '../services/api'
 
