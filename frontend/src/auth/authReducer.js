@@ -1,3 +1,5 @@
+import { TOKEN_VALIDATED, USER_FETCHED }from '../actions/actionTypes'
+
 const userKey = '_my_userkey'
 const INITIAL_STATE = {
   user: JSON.parse(localStorage.getItem(userKey)),
@@ -6,14 +8,14 @@ const INITIAL_STATE = {
 
 export default (state = INITIAL_STATE, action) => {
   switch(action.type) {
-    case 'TOKEN_VALIDATED':
+    case TOKEN_VALIDATED:
       if (action.payload) {
         return { ...state, validToken: true}
       } else {
         localStorage.removeItem(userKey)
         return { ...state, validToken: false, user: null }
       }
-    case 'USER_FETCHED':
+    case USER_FETCHED:
       localStorage.setItem(userKey, JSON.stringify(action.payload))
       return { ...state, user: action.payload, validToken: true}
     default: 
