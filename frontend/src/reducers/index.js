@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import { reducer as formReducer } from 'redux-form'
 
 import TicketsReducers from './TicketsReducers'
 import CompaniesReducers from './CompaniesReducers'
@@ -9,5 +10,6 @@ export default combineReducers({
   ticketsState: TicketsReducers,
   companiesState: CompaniesReducers,
   alertState: AlertReducers,
-  auth: AuthReducers
+  auth: AuthReducers,
+  form: formReducer
 })

@@ -2,6 +2,6 @@
   color: #FFFFFF;
 }
 
-a.nav-link {
+a#navbarDropdown {
   color: #FFFFFF !important;
 }
