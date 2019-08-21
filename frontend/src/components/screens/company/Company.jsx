@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 
 
 import Main from '../../templates/Main'
-import Input from '../../templates/Input'
+import Input from '../../templates/form/Input'
 import Grid from '../../templates/Grid'
 import Button from '../../templates/Button'
 import CompanyList from './CompanyList'
