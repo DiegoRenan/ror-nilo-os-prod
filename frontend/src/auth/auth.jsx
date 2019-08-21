@@ -3,7 +3,7 @@ import { Field, reduxForm, values } from 'redux-form'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { login } from './authActions'
+import { signin } from './authActions'
 import Grid from '../components/templates/Grid'
 import Input from '../components/templates/form/Input'
 
@@ -13,8 +13,8 @@ class Auth extends Component {
   }
 
   onSubmit() {
-    const  { login } = this.props
-    login(values)
+    const  { signin } = this.props
+    signin(values)
   }
 
   render() {
@@ -26,8 +26,8 @@ class Auth extends Component {
         <div className="login-box-body">
           <p className="login-box-msg">Bem vindo!</p>
           <form onSubmit={handleSubmit(v => this.onSubmit(v))} >
-            <Field Component={Input} type="input" name="email" placeholder="E-mail" icon="envelop" />
-            <Field Component={Input} type="password" name="password" placeholder="Senha" icon="lock" />
+            <Field component={Input} type="input" name="email" placeholder="E-mail" icon="envelop" />
+            <Field component={Input} type="password" name="password" placeholder="Senha" />
           </form>
           <div className="row">
             <Grid cols="4">
@@ -46,5 +46,5 @@ class Auth extends Component {
 }
 
 Auth = reduxForm({ form: 'authForm' })(Auth)
-const mapDispatchToProps = dispatch => bindActionCreators({ login }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ signin }, dispatch)
 export default connect(null, mapDispatchToProps)(Auth)
