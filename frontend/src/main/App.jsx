@@ -1,6 +1,8 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'jquery/dist/jquery.js';
+import 'bootstrap/dist/js/popper.min.js'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
-import 'jquery/dist/jquery.slim.min.js'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 import 'font-awesome/css/font-awesome.min.css'
 import './App.css'
 
