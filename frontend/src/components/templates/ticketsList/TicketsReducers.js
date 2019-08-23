@@ -1,4 +1,4 @@
-import { LOAD_TICKETS } from "../actions/actionTypes";
+import { LOAD_TICKETS } from "../../../actions/actionTypes";
 
 const INITIAL_STATE = { tickets: [] }
 

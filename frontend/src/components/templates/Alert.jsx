@@ -3,13 +3,23 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 class Alert extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { hidden: 'hidden'}
+
+  }
+  
+  componentDidUpdate() {
+    setTimeout(() => {
+      this.setState({...this.state, hidden: this.props.hidden})
+    }, 1000);
+  }
 
   render() {
     return (
       <section className="alert">
-        <div className={`alert-box alert-` + this.props.http_code + ` ` + this.props.hidden }>
+        <div className={`alert-box alert-` + this.props.http_code + ` ` + this.state.hidden }>
           {this.props.message}
-          {console.log(this.props.hidden)}
         </div>
       </section>
     )

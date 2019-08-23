@@ -5,13 +5,26 @@ import { bindActionCreators } from 'redux'
 
 
 import Main from '../../templates/Main'
-import Input from '../../templates/Input'
+import Input from '../../templates/form/Input'
 import Grid from '../../templates/Grid'
 import Button from '../../templates/Button'
 import CompanyList from './CompanyList'
-import { add, changeCompany } from '../../../actions/companies'
+import { add, changeCompany } from './companiesActions'
 
 const Company = props => {
+
+  const companyObj = () => {
+    const obj = 
+      {
+        data: {
+          type: "companies",
+            attributes: {
+            name: props.company
+          }
+        }
+      }
+    return obj
+  }
 
   return (
     <Main title="Empresas" >
@@ -22,7 +35,7 @@ const Company = props => {
             <Input type="text" value={props.company} onChange={props.changeCompany} />
           </Grid>
           <Grid cols="2 2 2 2">
-            <Button icon="plus" style="primary" onClick={() => props.add(props.company)} />
+            <Button icon="plus" style="primary" onClick={() => props.add(companyObj())} />
           </Grid>
         </div>
         <CompanyList />

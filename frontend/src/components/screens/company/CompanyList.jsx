@@ -1,12 +1,12 @@
 import './CompanyList.css'
 import React, {Component} from 'react'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { loadCompanies, remove } from '../../../actions/companies'
+import { loadCompanies, remove } from './companiesActions'
 
 import Icon from '../../templates/Icon'
-import Button from '../../templates/Button'
 
 class CompanyList extends Component {
   constructor(props) {
@@ -21,10 +21,9 @@ class CompanyList extends Component {
     let companies = this.props.companies || []
     return companies.map(company => (
       <tr key={company.id}>
-        <td>{company.attributes.name}</td>
-        <td> Fulano </td>
-        <td><Icon icon='edit' /></td>
-        <td><Button icon="trash" style="default" onClick={() =>  this.props.remove(company.id)} /></td>
+        <td><Link to={`companyShow/`+company.id}> {company.attributes.name} </Link></td>
+        <td> <Link to={`companyUpdate/`+company.id}> <Icon icon='edit' /> </Link> </td>
+        <td> <Link to="#" onClick={() =>  this.props.remove(company.id)} ><Icon icon='trash' /> </Link> </td>
       </tr>
     ))
   }
@@ -35,7 +34,6 @@ class CompanyList extends Component {
         <thead>
           <tr>
             <th>Nome</th>
-            <th> - </th>
             <th> - </th>
             <th> - </th>
           </tr>

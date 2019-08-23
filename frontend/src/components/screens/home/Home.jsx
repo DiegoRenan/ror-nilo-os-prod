@@ -2,7 +2,7 @@ import './Home.css'
 import React, { Component } from 'react'
 
 import Main from '../../templates/Main'
-import TicketsList from '../../templates/TicketsList'
+import TicketsList from '../../templates/ticketsList/TicketsList'
 
 export default class Home extends Component {
 

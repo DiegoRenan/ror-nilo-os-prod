@@ -1,20 +1,21 @@
 module V1
   class CompaniesController < ApplicationController
     before_action :set_company, only: [:show, :update, :destroy]
+    #before_action :authenticate_user!
   
-    # GET /companies
+    # GET v1/companies
     def index
       @companies = Company.all
   
       render json: @companies
     end
   
-    # GET /companies/1
+    # GET v1/companies/1
     def show
       render json: @company
     end
   
-    # POST /companies
+    # POST v1/companies
     def create
       @company = Company.new(company_params)
   
@@ -25,7 +26,7 @@ module V1
       end
     end
   
-    # PATCH/PUT /companies/1
+    # PATCH/PUT v1/companies/1
     def update
       if @company.update(company_params)
         render json: @company
@@ -34,13 +35,13 @@ module V1
       end
     end
   
-    # DELETE /companies/1
+    # DELETE v1/companies/1
     def destroy
       if @company.tickets.exists? 
         render json: ErrorSerializer.serialize(@company.errors), status: :conflict
+      else
+        @company.destroy
       end
-  
-      @company.destroy
     end
   
     private
@@ -50,8 +51,13 @@ module V1
           @company = Ticket.find(params[:ticket_id]).company
           return @company
         end
-          
-        @company = Company.find(params[:id])
+        
+        if Company.exists?(params[:id])
+          @company = Company.find(params[:id])
+        else
+          error = {:id=>["Não encontrado Empresa com o id: #{params[:id]}"]}
+          render json: ErrorSerializer.serialize(error), status: :unprocessable_entity
+        end
       end
   
       # Only allow a trusted parameter "white list" through.
