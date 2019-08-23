@@ -1,4 +1,8 @@
-import { LOAD_COMPANIES, COMPANY_CHANGED, COMPANY_ADDED, GET_COMPANY, COMPANY_UPDATED } from '../actions/actionTypes'
+import { LOAD_COMPANIES, 
+         COMPANY_CHANGED, 
+         COMPANY_ADDED, 
+         GET_COMPANY, 
+         COMPANY_UPDATED } from '../../../actions/actionTypes'
 
 const INITIAL_STATE = { companies: [] }
 

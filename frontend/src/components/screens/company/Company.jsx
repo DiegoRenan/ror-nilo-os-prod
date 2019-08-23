@@ -9,7 +9,7 @@ import Input from '../../templates/form/Input'
 import Grid from '../../templates/Grid'
 import Button from '../../templates/Button'
 import CompanyList from './CompanyList'
-import { add, changeCompany } from '../../../actions/companies'
+import { add, changeCompany } from './companiesActions'
 
 const Company = props => {
 

@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 import { reducer as formReducer } from 'redux-form'
 
 import TicketsReducers from './TicketsReducers'
-import CompaniesReducers from './CompaniesReducers'
+import CompaniesReducers from '../components/screens/company/CompaniesReducers'
 import AlertReducers from './AlertReducers'
 import AuthReducers from '../auth/authReducer'
 

@@ -8,7 +8,7 @@ import Main from '../../templates/Main'
 import Input from '../../templates/form/Input'
 import Grid from '../../templates/Grid'
 import Button from '../../templates/Button'
-import { update, changeCompany, getCompany } from '../../../actions/companies'
+import { update, changeCompany, getCompany } from './companiesActions'
 
 class CompanyUpdate extends Component {
   

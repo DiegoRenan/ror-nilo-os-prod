@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux'
 
 import Main from '../../templates/Main'
 import Grid from '../../templates/Grid'
-import { getCompany } from '../../../actions/companies'
+import { getCompany } from './companiesActions'
 
 class CompanyShow extends Component {
 
