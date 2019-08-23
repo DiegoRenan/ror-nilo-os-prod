@@ -3,7 +3,6 @@ import { USER_FETCHED, TOKEN_VALIDATED } from '../actions/actionTypes';
 
 import { url } from '../services/api'
 
-
 export function signin(values) {
   return submit(values, 'auth/sign_in')
 }

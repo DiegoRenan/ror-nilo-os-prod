@@ -29,11 +29,11 @@ class Tool extends Component {
 
         </a>
 
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
           {/* <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a> */}
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item"
+          <div className="dropdown-divider"></div>
+          <a className="dropdown-item"
              onClick={this.props.logout} 
              href="#">
                Sair

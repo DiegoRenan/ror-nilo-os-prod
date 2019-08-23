@@ -3,7 +3,6 @@ import { TOKEN_VALIDATED, USER_FETCHED }from '../actions/actionTypes'
 const userKey = '_my_userkey'
 const INITIAL_STATE = {
   user: JSON.parse(localStorage.getItem(userKey)),
-  //user: { name: 'user', email: 'teste@mail.com' },
   validToken: false
 }
 
