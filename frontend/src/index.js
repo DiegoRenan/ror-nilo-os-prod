@@ -4,12 +4,12 @@ import { Provider } from 'react-redux'
 
 import * as serviceWorker from './serviceWorker'
  
-import App from './main/App'
+import AuthOrApp from './main/AuthOrApp'
 import store from './store'
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <AuthOrApp />
   </Provider>
 , document.getElementById('root'))
 serviceWorker.unregister()

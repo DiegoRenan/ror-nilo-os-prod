@@ -1,7 +1,11 @@
-import { LOAD_COMPANIES, COMPANY_CHANGED, COMPANY_ADDED , COMPANY_UPDATED, GET_COMPANY}  from './actionTypes'
+import { LOAD_COMPANIES, 
+         COMPANY_CHANGED, 
+         COMPANY_ADDED , 
+         COMPANY_UPDATED, 
+         GET_COMPANY}  from '../../../actions/actionTypes'
 
-import alert from './alert'
-import api from '../services/api'
+import alert from '../../../actions/alert'
+import api from '../../../services/api'
 
 //show/hidden Alerts
 const hiddenAlert = (dispatch) => {

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { loadCompanies, remove } from '../../../actions/companies'
+import { loadCompanies, remove } from './companiesActions'
 
 import Icon from '../../templates/Icon'
 

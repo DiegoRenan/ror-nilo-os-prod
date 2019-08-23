@@ -3,9 +3,9 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { loadTickets } from '../../actions/tickets'
+import { loadTickets } from './ticketsActions'
 
-import Icon from './Icon'
+import Icon from '../Icon'
 
 class TicketsList extends Component {
   constructor(props) {
